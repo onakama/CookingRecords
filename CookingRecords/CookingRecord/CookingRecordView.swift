@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct CookingRecordView: View {
+    var viewModel = CookingRecordViewModel()
+
     var body: some View {
-            VStack {
-                Image("image3")
-                    .resizable()
-                    .scaledToFit()
-                Text("aaaaaaaaa")
-                
+        VStack(alignment: .leading) {
+            AsyncImage(url: URL(string: viewModel.record.imageUrl)) { image in
+                image
+                .resizable()
+                .scaledToFit()
+            } placeholder: {
+                ProgressView()
             }
+            HStack {
+                Spacer()
+                Text(viewModel.record.recordedAt)
+            }
+            Text(viewModel.record.comment)
+        }
     }
 }
 
