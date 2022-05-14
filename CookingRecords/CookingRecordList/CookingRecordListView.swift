@@ -11,7 +11,6 @@ struct CookingRecordListView: View {
     @ObservedObject var viewModel = CookingRecordListViewModel()
     var filterCookingRecordList: [CookingRecord] {
             viewModel.cookingRecord.filter { record in
-                print(record.recipeType.rawValue)
                 return viewModel.recipeButtonSaturation[record.recipeTypeStr()] ?? false
         }
     }

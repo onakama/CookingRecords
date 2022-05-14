@@ -14,12 +14,14 @@ class CookingRecordListViewModel: ObservableObject {
     @Published var recipeButtonSaturation = ["mainDish": true, "sideDish": true, "soup": true]
 
     
-    init() { update() }
+    init() { Task { await update() } }
     
-    func update() {
+    func update() async {
         do {
-            let data = try CookingRecordListModel().jsonDecode()
-            self.cookingRecord = data.cookingRecordList
+            let data = try await CookingRecordListModel().httpGet()
+            await MainActor.run { [weak self] in
+                self?.cookingRecord = data.cookingRecordList
+            }
         } catch let error{
             print(error)
         }
