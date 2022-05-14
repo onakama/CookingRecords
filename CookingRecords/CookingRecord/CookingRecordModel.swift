@@ -27,7 +27,7 @@ struct CookingRecord: Hashable, Codable {
     let imageUrl: String
     let comment: String
     let recipeType: RecipeType
-    let recordedAt: String
+    let recordedAt: Date
     
     enum RecipeType: String, Codable {
         case mainDish = "main_dish"

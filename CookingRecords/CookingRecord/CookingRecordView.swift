@@ -21,7 +21,7 @@ struct CookingRecordView: View {
             }
             HStack {
                 Spacer()
-                Text(viewModel.record.recordedAt)
+                Text(DateFormatter.formatter.string(from: viewModel.record.recordedAt))
             }
             Text(viewModel.record.comment)
         }
