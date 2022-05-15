@@ -18,7 +18,7 @@ class CookingRecordListViewModel: ObservableObject {
     
     func update() async {
         do {
-            let data = try await CookingRecordListModel().httpGet()
+            let data = try await CookingRecordListModel.shared.httpGet()
             await MainActor.run { [weak self] in
                 self?.cookingRecord = data.cookingRecordList
             }

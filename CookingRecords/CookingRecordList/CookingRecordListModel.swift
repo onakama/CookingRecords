@@ -6,7 +6,10 @@
 //
 
 import Foundation
-class CookingRecordListModel {
+final class CookingRecordListModel {
+    
+    private init() {}
+    public static let shared = CookingRecordListModel()
     
     func httpGet() async throws -> ResponseData {
         let url = URL(string: "https://cooking-records.herokuapp.com/cooking_records?offset=1&limit=100")!
