@@ -10,7 +10,7 @@ import SwiftUI
 struct CookingRecordListView: View {
     @ObservedObject var viewModel = CookingRecordListViewModel()
     var filterCookingRecordList: [CookingRecord] {
-            viewModel.cookingRecord.filter { record in
+            viewModel.cookingRecordList.filter { record in
                 return viewModel.recipeButtonSaturation[record.recipeTypeStr()] ?? false
         }
     }
@@ -25,13 +25,18 @@ struct CookingRecordListView: View {
         GeometryReader { geometry in
             ScrollView {
                 LazyVGrid(columns: threeColumnGrid, alignment: .leading, spacing: 0) {
-                    ForEach(filterCookingRecordList, id: \.self) { num in
+                    ForEach(filterCookingRecordList, id: \.self) { record in
                         ZStack {
                             Image("image3")
                                 .resizable()
                                 .aspectRatio(1, contentMode: .fill)
                         }
                     }
+                }
+                Button(action: {
+                    Task { await viewModel.update() }
+                }) {
+                    Text("reload")
                 }
             }
             VStack {

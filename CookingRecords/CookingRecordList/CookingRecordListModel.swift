@@ -11,8 +11,8 @@ final class CookingRecordListModel {
     private init() {}
     public static let shared = CookingRecordListModel()
     
-    func httpGet() async throws -> ResponseData {
-        let url = URL(string: "https://cooking-records.herokuapp.com/cooking_records?offset=1&limit=100")!
+    func httpGet(offset: Int, limit: Int) async throws -> ResponseData {
+        let url = URL(string: "https://cooking-records.herokuapp.com/cooking_records?offset=\(offset)&limit=\(limit)")!
         let request = URLRequest(url: url)
         let (data, _) = try await URLSession.shared.data(for: request)
         do {
