@@ -8,7 +8,7 @@
 import Foundation
 
 class CookingRecordListViewModel: ObservableObject {
-    @Published var cookingRecord: [CookingRecord] = []
+    @MainActor @Published var cookingRecord: [CookingRecord] = []
 
     //true: saturation(1.0)    false: saturation(0.0)
     @Published var recipeButtonSaturation = ["mainDish": true, "sideDish": true, "soup": true]
