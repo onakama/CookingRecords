@@ -8,7 +8,7 @@
 import Foundation
 
 class CookingRecordListViewModel: ObservableObject {
-    @MainActor @Published var cookingRecord: [CookingRecord] = []
+    @MainActor @Published var cookingRecordList: [CookingRecord] = []
 
     //true: saturation(1.0)    false: saturation(0.0)
     @Published var recipeButtonSaturation = ["mainDish": true, "sideDish": true, "soup": true]
@@ -18,12 +18,14 @@ class CookingRecordListViewModel: ObservableObject {
     
     func update() async {
         do {
-            let data = try await CookingRecordListModel.shared.httpGet()
+            let data = try await CookingRecordListModel.shared.httpGet(offset: cookingRecordList.count, limit: 30)
             await MainActor.run { [weak self] in
-                self?.cookingRecord = data.cookingRecordList
+                self?.cookingRecordList += data.cookingRecordList
             }
         } catch let error{
             print(error)
         }
     }
+    
+    
 }
