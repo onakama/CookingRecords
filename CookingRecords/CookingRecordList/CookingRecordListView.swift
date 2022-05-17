@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct CookingRecordListView: View {
     @ObservedObject var viewModel = CookingRecordListViewModel()
@@ -27,7 +28,7 @@ struct CookingRecordListView: View {
                 LazyVGrid(columns: threeColumnGrid, alignment: .leading, spacing: 0) {
                     ForEach(filterCookingRecordList, id: \.self) { record in
                         ZStack {
-                            Image("image3")
+                            WebImage(url: URL(string: record.imageUrl))
                                 .resizable()
                                 .aspectRatio(1, contentMode: .fill)
                         }

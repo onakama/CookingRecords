@@ -19,9 +19,11 @@
 		5CE87443282D1A570037F406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE87442282D1A570037F406 /* Assets.xcassets */; };
 		5CE87446282D1A570037F406 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE87445282D1A570037F406 /* Preview Assets.xcassets */; };
 		5CE87451282D1BBF0037F406 /* CookingRecordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE87450282D1BBF0037F406 /* CookingRecordListView.swift */; };
+		89EFE49DC14BEA928E8A81B1 /* Pods_CookingRecords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136E8846EB05FCD9683A29AB /* Pods_CookingRecords.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		136E8846EB05FCD9683A29AB /* Pods_CookingRecords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CookingRecords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C37389B282D2569006BCEF9 /* CookingRecordListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingRecordListViewModel.swift; sourceTree = "<group>"; };
 		5C37389D282D2620006BCEF9 /* CookingRecordListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingRecordListModel.swift; sourceTree = "<group>"; };
 		5C37389F282D2777006BCEF9 /* CookingRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingRecordModel.swift; sourceTree = "<group>"; };
@@ -35,6 +37,8 @@
 		5CE87442282D1A570037F406 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CE87445282D1A570037F406 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5CE87450282D1BBF0037F406 /* CookingRecordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingRecordListView.swift; sourceTree = "<group>"; };
+		C52145D3861E4EB6A61B3C70 /* Pods-CookingRecords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CookingRecords.release.xcconfig"; path = "Target Support Files/Pods-CookingRecords/Pods-CookingRecords.release.xcconfig"; sourceTree = "<group>"; };
+		EC8ADF7B4E50EACD285174FF /* Pods-CookingRecords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CookingRecords.debug.xcconfig"; path = "Target Support Files/Pods-CookingRecords/Pods-CookingRecords.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,12 +46,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89EFE49DC14BEA928E8A81B1 /* Pods_CookingRecords.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B8E29B09221FBE99178AE35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				136E8846EB05FCD9683A29AB /* Pods_CookingRecords.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5C3738A3282EC3E8006BCEF9 /* CookingRecordList */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +86,8 @@
 			children = (
 				5CE8743D282D1A560037F406 /* CookingRecords */,
 				5CE8743C282D1A560037F406 /* Products */,
+				BC1F50EFE074C6F64F5A0BE3 /* Pods */,
+				4B8E29B09221FBE99178AE35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +122,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		BC1F50EFE074C6F64F5A0BE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EC8ADF7B4E50EACD285174FF /* Pods-CookingRecords.debug.xcconfig */,
+				C52145D3861E4EB6A61B3C70 /* Pods-CookingRecords.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -114,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CE87449282D1A570037F406 /* Build configuration list for PBXNativeTarget "CookingRecords" */;
 			buildPhases = (
+				279F5E8191E96ECD663F7B0D /* [CP] Check Pods Manifest.lock */,
 				5CE87437282D1A560037F406 /* Sources */,
 				5CE87438282D1A560037F406 /* Frameworks */,
 				5CE87439282D1A560037F406 /* Resources */,
+				5154663476E29CE5EB423D3C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,6 +198,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		279F5E8191E96ECD663F7B0D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CookingRecords-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5154663476E29CE5EB423D3C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CookingRecords/Pods-CookingRecords-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CookingRecords/Pods-CookingRecords-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CookingRecords/Pods-CookingRecords-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5CE87437282D1A560037F406 /* Sources */ = {
@@ -309,6 +378,7 @@
 		};
 		5CE8744A282D1A570037F406 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC8ADF7B4E50EACD285174FF /* Pods-CookingRecords.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -338,6 +408,7 @@
 		};
 		5CE8744B282D1A570037F406 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C52145D3861E4EB6A61B3C70 /* Pods-CookingRecords.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
