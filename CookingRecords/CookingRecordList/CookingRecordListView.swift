@@ -24,73 +24,75 @@ struct CookingRecordListView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            ScrollView {
-                LazyVGrid(columns: threeColumnGrid, alignment: .leading, spacing: 0) {
-                    ForEach(filterCookingRecordList, id: \.self) { record in
+            NavigationView {
+                ScrollView {
+                    LazyVGrid(columns: threeColumnGrid, alignment: .leading, spacing: 0) {
+                        ForEach(filterCookingRecordList, id: \.self) { record in
+                            NavigationLink(destination: CookingRecordView()) {
+                                WebImage(url: URL(string: record.imageUrl))
+                                    .resizable()
+                                    .aspectRatio(1, contentMode: .fill)
+                            }
+                        }
+                    }
+                    Button(action: {
+                        Task { await viewModel.update() }
+                    }) {
+                        Text("reload")
+                    }
+                }
+                VStack {
+                    Button(action: {
+                        viewModel.recipeButtonSaturation["mainDish"]!.toggle()
+                    }) {
                         ZStack {
-                            WebImage(url: URL(string: record.imageUrl))
+                            Image("mainDish")
                                 .resizable()
-                                .aspectRatio(1, contentMode: .fill)
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 60.0, height: 60.0)
+                                .clipShape(Circle())
+                                .saturation(viewModel.recipeButtonSaturation["mainDish"]! ? 1.0: 0.0)
+                            Text("主菜/主食")
+                                .foregroundColor(.black)
+                                .bold()
+                                .padding(.top, 65)
+                        }
+                    }
+                    Button(action: {
+                        viewModel.recipeButtonSaturation["sideDish"]!.toggle()
+                    }) {
+                        ZStack {
+                            Image("sideDish")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 60.0, height: 60.0)
+                                .clipShape(Circle())
+                                .saturation(viewModel.recipeButtonSaturation["sideDish"]! ? 1.0: 0.0)
+                            Text("副菜")
+                                .foregroundColor(.black)
+                                .bold()
+                                .padding(.top, 65)
+                        }
+                    }
+                    Button(action: {
+                        viewModel.recipeButtonSaturation["soup"]!.toggle()
+                    }) {
+                        ZStack {
+                            Image("soup")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 60.0, height: 60.0)
+                                .clipShape(Circle())
+                                .saturation(viewModel.recipeButtonSaturation["soup"]! ? 1.0: 0.0)
+                            Text("スープ")
+                                .foregroundColor(.black)
+                                .bold()
+                                .padding(.top, 65)
                         }
                     }
                 }
-                Button(action: {
-                    Task { await viewModel.update() }
-                }) {
-                    Text("reload")
-                }
-            }
-            VStack {
-                Button(action: {
-                    viewModel.recipeButtonSaturation["mainDish"]!.toggle()
-                }) {
-                    ZStack {
-                        Image("mainDish")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 60.0, height: 60.0)
-                            .clipShape(Circle())
-                            .saturation(viewModel.recipeButtonSaturation["mainDish"]! ? 1.0: 0.0)
-                        Text("主菜/主食")
-                            .foregroundColor(.black)
-                            .bold()
-                            .padding(.top, 65)
-                    }
-                }
-                Button(action: {
-                    viewModel.recipeButtonSaturation["sideDish"]!.toggle()
-                }) {
-                    ZStack {
-                        Image("sideDish")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 60.0, height: 60.0)
-                            .clipShape(Circle())
-                            .saturation(viewModel.recipeButtonSaturation["sideDish"]! ? 1.0: 0.0)
-                        Text("副菜")
-                            .foregroundColor(.black)
-                            .bold()
-                            .padding(.top, 65)
-                    }
-                }
-                Button(action: {
-                    viewModel.recipeButtonSaturation["soup"]!.toggle()
-                }) {
-                    ZStack {
-                        Image("soup")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 60.0, height: 60.0)
-                            .clipShape(Circle())
-                            .saturation(viewModel.recipeButtonSaturation["soup"]! ? 1.0: 0.0)
-                        Text("スープ")
-                            .foregroundColor(.black)
-                            .bold()
-                            .padding(.top, 65)
-                    }
-                }
-            }
             .offset(x: geometry.size.width * 3/4, y: geometry.size.height * 3/5)
+            }
         }
     }
 }
