@@ -38,7 +38,8 @@ struct CookingRecordListView: View {
                     Button(action: {
                         Task { await viewModel.update() }
                     }) {
-                        Text("reload")
+                        Text("さらに古い結果を読み込む")
+                            .font(.caption)
                     }
                 }
                 VStack {
