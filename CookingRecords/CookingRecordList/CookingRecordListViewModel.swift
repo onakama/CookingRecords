@@ -12,6 +12,7 @@ class CookingRecordListViewModel: ObservableObject {
 
     //true: saturation(1.0)    false: saturation(0.0)
     @Published var recipeButtonSaturation = ["mainDish": true, "sideDish": true, "soup": true]
+    @Published var showRecipeButton = false
 
     
     init() { Task { await update() } }
