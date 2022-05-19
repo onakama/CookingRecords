@@ -128,7 +128,6 @@
 				EC8ADF7B4E50EACD285174FF /* Pods-CookingRecords.debug.xcconfig */,
 				C52145D3861E4EB6A61B3C70 /* Pods-CookingRecords.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
