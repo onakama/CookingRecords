@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct CookingRecordView: View {
-    var viewModel = CookingRecordViewModel()
+    @ObservedObject var viewModel: CookingRecordViewModel
 
+    init(record: CookingRecord) {
+        self.viewModel = CookingRecordViewModel(record: record)
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             AsyncImage(url: URL(string: viewModel.record.imageUrl)) { image in
@@ -30,6 +34,7 @@ struct CookingRecordView: View {
 
 struct CookingRecordView_Previews: PreviewProvider {
     static var previews: some View {
-        CookingRecordView()
+        let record = CookingRecord(imageUrl: "https://cooking-records.herokuapp.com/images/1.jpg", comment: "パンチのきいた辛味が印象的です。", recipeType: CookingRecord.RecipeType.mainDish, recordedAt: DateFormatter.formatter.date(from: "2018-04-19 14:05:41")!)
+        CookingRecordView(record: record)
     }
 }

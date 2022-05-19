@@ -28,7 +28,7 @@ struct CookingRecordListView: View {
                 ScrollView {
                     LazyVGrid(columns: threeColumnGrid, alignment: .leading, spacing: 0) {
                         ForEach(filterCookingRecordList, id: \.self) { record in
-                            NavigationLink(destination: CookingRecordView()) {
+                            NavigationLink(destination: CookingRecordView(record: record)) {
                                 WebImage(url: URL(string: record.imageUrl))
                                     .resizable()
                                     .aspectRatio(1, contentMode: .fill)
