@@ -23,8 +23,8 @@ struct CookingRecordListView: View {
     ]
     
     var body: some View {
-        GeometryReader { geometry in
-            NavigationView {
+        NavigationView {
+            GeometryReader { geometry in
                 ScrollView {
                     LazyVGrid(columns: threeColumnGrid, alignment: .leading, spacing: 0) {
                         ForEach(filterCookingRecordList, id: \.self) { record in
@@ -94,6 +94,8 @@ struct CookingRecordListView: View {
                 }
             .offset(x: geometry.size.width * 3/4, y: geometry.size.height * 3/5)
             }
+            .navigationBarTitle(Text("CookingReordList"))
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
