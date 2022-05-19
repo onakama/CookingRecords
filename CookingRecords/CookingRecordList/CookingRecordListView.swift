@@ -97,6 +97,7 @@ struct CookingRecordListView: View {
             .navigationBarTitle(Text("CookingReordList"))
             .navigationBarTitleDisplayMode(.inline)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
