@@ -10,10 +10,7 @@ import Foundation
 extension DateFormatter {
     static let formatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.calendar = Calendar(identifier: .gregorian)
-        formatter.locale = Locale(identifier: "ja_JP")
-        formatter.timeZone = TimeZone(identifier:  "Asia/Tokyo")
-        formatter.dateFormat = "yyyy-mm-dd HH:mm:ss"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return formatter
     }()
 }
