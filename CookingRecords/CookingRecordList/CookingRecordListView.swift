@@ -35,11 +35,13 @@ struct CookingRecordListView: View {
                             }
                         }
                     }
-                    Button(action: {
-                        Task { await viewModel.update() }
-                    }) {
-                        Text("さらに古い結果を読み込む")
-                            .font(.caption)
+                    if viewModel.showReloadButton{
+                        Button(action: {
+                            Task { await viewModel.update() }
+                        }) {
+                            Text("さらに古い結果を読み込む")
+                                .font(.caption)
+                        }
                     }
                 }
                 Button(action: {
