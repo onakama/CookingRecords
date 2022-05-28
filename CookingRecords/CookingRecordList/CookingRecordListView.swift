@@ -44,12 +44,8 @@ struct CookingRecordListView: View {
                         }
                     }
                 }
-                Button(action: {
+                ShowRecipeButton(){
                     viewModel.showRecipeButton.toggle()
-                }) {
-                    Image(systemName: "line.3.horizontal.decrease.circle")
-                        .resizable().frame(width: 60.0, height: 60.0)
-                        .frame(width: 30.0, height: 30.0)
                 }
                 .offset(x: geometry.size.width * 4/5, y: geometry.size.height * 9/10)
                 VStack {

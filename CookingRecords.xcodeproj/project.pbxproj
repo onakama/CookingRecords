@@ -16,6 +16,7 @@
 		5C6EC988284213FE00EBF18C /* RecipeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6EC987284213FE00EBF18C /* RecipeType.swift */; };
 		5CB01CCD282ED90300CE92F6 /* CookingRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB01CCC282ED90300CE92F6 /* CookingRecordViewModel.swift */; };
 		5CB01CCF282F9C8000CE92F6 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB01CCE282F9C8000CE92F6 /* extension.swift */; };
+		5CB0D96E28422557005F332F /* ShowRecipeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB0D96D28422557005F332F /* ShowRecipeButton.swift */; };
 		5CE8743F282D1A560037F406 /* CookingRecordsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8743E282D1A560037F406 /* CookingRecordsApp.swift */; };
 		5CE87441282D1A560037F406 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE87440282D1A560037F406 /* ContentView.swift */; };
 		5CE87443282D1A570037F406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE87442282D1A570037F406 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		5C6EC987284213FE00EBF18C /* RecipeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeType.swift; sourceTree = "<group>"; };
 		5CB01CCC282ED90300CE92F6 /* CookingRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingRecordViewModel.swift; sourceTree = "<group>"; };
 		5CB01CCE282F9C8000CE92F6 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		5CB0D96D28422557005F332F /* ShowRecipeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRecipeButton.swift; sourceTree = "<group>"; };
 		5CE8743B282D1A560037F406 /* CookingRecords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookingRecords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CE8743E282D1A560037F406 /* CookingRecordsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingRecordsApp.swift; sourceTree = "<group>"; };
 		5CE87440282D1A560037F406 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,15 @@
 			path = CookingRecord;
 			sourceTree = "<group>";
 		};
+		5CB0D96F28422571005F332F /* RecipeTypeButton */ = {
+			isa = PBXGroup;
+			children = (
+				5C6EC98228420BBE00EBF18C /* RecipeButtonView.swift */,
+				5CB0D96D28422557005F332F /* ShowRecipeButton.swift */,
+			);
+			path = RecipeTypeButton;
+			sourceTree = "<group>";
+		};
 		5CE87432282D1A560037F406 = {
 			isa = PBXGroup;
 			children = (
@@ -110,7 +121,7 @@
 				5CE87440282D1A560037F406 /* ContentView.swift */,
 				5C3738A3282EC3E8006BCEF9 /* CookingRecordList */,
 				5C3738A4282EC3FA006BCEF9 /* CookingRecord */,
-				5C6EC98228420BBE00EBF18C /* RecipeButtonView.swift */,
+				5CB0D96F28422571005F332F /* RecipeTypeButton */,
 				5C6EC987284213FE00EBF18C /* RecipeType.swift */,
 				5C3738A1282E8BCD006BCEF9 /* CookingRecordError.swift */,
 				5CB01CCE282F9C8000CE92F6 /* extension.swift */,
@@ -262,6 +273,7 @@
 				5C3738A8282EC4EA006BCEF9 /* CookingRecordView.swift in Sources */,
 				5C3738A0282D2777006BCEF9 /* CookingRecordModel.swift in Sources */,
 				5C6EC988284213FE00EBF18C /* RecipeType.swift in Sources */,
+				5CB0D96E28422557005F332F /* ShowRecipeButton.swift in Sources */,
 				5CB01CCD282ED90300CE92F6 /* CookingRecordViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
