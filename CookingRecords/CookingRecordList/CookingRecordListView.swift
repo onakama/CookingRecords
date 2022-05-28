@@ -54,69 +54,20 @@ struct CookingRecordListView: View {
                 .offset(x: geometry.size.width * 4/5, y: geometry.size.height * 9/10)
                 VStack {
                     if viewModel.showRecipeButton {
-                        Button(action: {
+                        
+                        RecipeButtonView(recipeType: RecipeType.mainDish) {
                             viewModel.recipeButtonSaturation["mainDish"]!.toggle()
-                        }) {
-                            ZStack {
-                                Circle()
-                                    .frame(width: 85.0, height: 85.0)
-                                    .foregroundColor(.white)
-                                Image("mainDish")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 60.0, height: 60.0)
-                                    .clipShape(Circle())
-                                    .saturation(viewModel.recipeButtonSaturation["mainDish"]! ? 1.0: 0.0)
-                                    .padding(.bottom, 10)
-                                Text("主菜/主食")
-                                    .font(.body)
-                                    .foregroundColor(.black)
-                                    .bold()
-                                    .padding(.top, 40)
-                            }
-                        }
+                        }.environmentObject(viewModel)
                         .offset(x: geometry.size.width * 7/10, y: geometry.size.height * 5/8)
-                        Button(action: {
+                        
+                        RecipeButtonView(recipeType: RecipeType.sideDish) {
                             viewModel.recipeButtonSaturation["sideDish"]!.toggle()
-                        }) {
-                            ZStack {
-                                Circle()
-                                    .frame(width: 85.0, height: 85.0)
-                                    .foregroundColor(.white)
-                                Image("sideDish")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 50.0, height: 50.0)
-                                    .clipShape(Circle())
-                                    .saturation(viewModel.recipeButtonSaturation["sideDish"]! ? 1.0: 0.0)
-                                Text("副菜")
-                                    .font(.body)
-                                    .foregroundColor(.black)
-                                    .bold()
-                                    .padding(.top, 60)
-                            }
-                        }
+                        }.environmentObject(viewModel)
                         .offset(x: geometry.size.width * 1/2, y: geometry.size.height * 3/5)
-                        Button(action: {
+                        
+                        RecipeButtonView(recipeType: RecipeType.soup) {
                             viewModel.recipeButtonSaturation["soup"]!.toggle()
-                        }) {
-                            ZStack {
-                                Circle()
-                                    .frame(width: 85.0, height: 85.0)
-                                    .foregroundColor(.white)
-                                Image("soup")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 60.0, height: 60.0)
-                                    .clipShape(Circle())
-                                    .saturation(viewModel.recipeButtonSaturation["soup"]! ? 1.0: 0.0)
-                                Text("スープ")
-                                    .font(.body)
-                                    .foregroundColor(.black)
-                                    .bold()
-                                    .padding(.top, 60)
-                            }
-                        }
+                        }.environmentObject(viewModel)
                         .offset(x: geometry.size.width * 2/5, y: geometry.size.height * 3/5)
                     }
                 }
